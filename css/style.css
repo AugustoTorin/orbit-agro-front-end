@@ -96,6 +96,17 @@ body{
     gap: var(--space-lg);
 }
 
+.layout-texto-imagem h2{
+    margin-block: var(--space-md);
+    font-size: 60px;
+    line-height: 1.1;
+}
+
+.layout-texto-imagem p{
+    margin-block: var(--space-lg);
+    font-size: var(--space-md);
+}
+
 .layout-imagem-texto{
     background-color: brown;
 }
