@@ -23,8 +23,18 @@
                 <li><a href="#publico-alvo">Público-alvo</a></li>
                 <li><a href="#beneficios">Benefícios</a></li>
                 <li><a href="#aplicacao">Aplicação</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
+
+        <div class="seletor-tema">
+            <span>Tema:</span>
+            <button class="botao-tema tema-verde" onclick="aplicarTema('verde')" title="Tema verde"></button>
+            <button class="botao-tema tema-escuro" onclick="aplicarTema('escuro')" title="Tema escuro"></button>
+            <button class="botao-tema tema-espacial" onclick="aplicarTema('espacial')" title="Tema espacial"></button>
+        </div>
     </header>
 
     <main>
@@ -150,6 +160,72 @@
 
         </section>
 
+        <section id="galeria" class="layout-slideshow">
+
+            <div class="bloco-texto">
+                <h2>Galeria</h2>
+                <p>Veja como tecnologia e campo se conectam para gerar resultados reais.</p>
+            </div>
+
+            <div class="slideshow">
+                <button class="slide-botao slide-anterior" onclick="slideAnterior()" aria-label="Imagem anterior">&#10094;</button>
+                <img id="slide-img" src="./images/irrigacao.jpg" alt="Slideshow">
+                <button class="slide-botao slide-proximo" onclick="proximoSlide()" aria-label="Proxima imagem">&#10095;</button>
+                <p id="slide-legenda" class="slide-legenda"></p>
+            </div>
+
+        </section>
+
+        <section id="quiz" class="layout-quiz">
+
+            <div class="bloco-texto">
+                <h2>Quiz da Indústria Espacial</h2>
+                <p>Responda 10 perguntas e descubra o quanto você sabe sobre a nova era espacial.</p>
+            </div>
+
+            <div id="quiz-area" class="quiz-card">
+                <p id="quiz-contador" class="quiz-contador"></p>
+                <h3 id="quiz-pergunta" class="quiz-pergunta"></h3>
+                <div id="quiz-opcoes" class="quiz-opcoes"></div>
+                <p id="quiz-aviso" class="quiz-aviso"></p>
+                <button class="botao-padrao" onclick="proximaPergunta()">Proxima</button>
+            </div>
+
+            <div id="quiz-resultado" class="quiz-card quiz-resultado-card">
+                <h3>Resultado</h3>
+                <p id="quiz-pontuacao" class="quiz-pontuacao"></p>
+                <p id="quiz-mensagem" class="quiz-mensagem"></p>
+                <button class="botao-padrao" onclick="reiniciarQuiz()">Tentar novamente</button>
+            </div>
+
+        </section>
+
+        <section id="contato" class="layout-contato">
+
+            <div class="bloco-texto">
+                <h2>Fale com a gente</h2>
+                <p>Tem dúvidas, sugestões ou quer testar a solução? Envie sua mensagem abaixo.</p>
+            </div>
+
+            <form id="form-contato" class="form-contato" novalidate>
+
+                <label for="form-nome">Nome</label>
+                <input id="form-nome" type="text" name="nome" placeholder="Seu nome completo">
+
+                <label for="form-email">E-mail</label>
+                <input id="form-email" type="email" name="email" placeholder="seu@email.com">
+
+                <label for="form-mensagem">Mensagem</label>
+                <textarea id="form-mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+
+                <button type="submit" class="botao-padrao">Enviar</button>
+
+                <p id="form-retorno" class="form-retorno"></p>
+
+            </form>
+
+        </section>
+
     </main>
 
     <footer>
@@ -158,6 +234,8 @@
         <p>Augusto - 571119 | Felipe - 573654 | Thiago - 571342 | Fabrício - 571571 | Julia - 569203</p>
 
     </footer>
+
+    <script src="./js/script.js"></script>
 
 </body>
 </html>
