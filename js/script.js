@@ -153,6 +153,8 @@ function reiniciarQuiz() {
 function aplicarTema(t) {
     var r = document.documentElement;
 
+    localStorage.setItem("tema", t);
+
     if (t == "verde") {
         r.style.setProperty("--cor-principal", "#1F6B3A");
         r.style.setProperty("--cor-secundaria", "#2F80ED");
@@ -194,5 +196,12 @@ function aplicarTema(t) {
 window.onload = function() {
     trocarSlide(0);
     montarPergunta();
+
     document.getElementById("form-contato").onsubmit = enviarForm;
+
+    var temaSalvo = localStorage.getItem("tema");
+
+    if (temaSalvo) {
+        aplicarTema(temaSalvo);
+    }
 };
