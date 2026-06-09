@@ -11,6 +11,7 @@ var legendas = [
 ];
 
 var slide = 0;
+var intervaloSlide;
 
 function trocarSlide(n) {
     slide = slide + n;
@@ -24,7 +25,15 @@ function trocarSlide(n) {
 function proximoSlide() { trocarSlide(1); }
 function slideAnterior() { trocarSlide(-1); }
 
-setInterval(function(){ trocarSlide(1); }, 5000);
+function iniciarSlideAutomatico() {
+    intervaloSlide = setInterval(function() {
+        trocarSlide(1);
+    }, 5000);
+}
+
+function pararSlideAutomatico() {
+    clearInterval(intervaloSlide);
+}
 
 function validarEmail(email) {
     return email.includes("@") && email.includes(".");
@@ -195,6 +204,12 @@ function aplicarTema(t) {
 
 window.onload = function() {
     trocarSlide(0);
+
+    iniciarSlideAutomatico();
+
+    document.getElementById("slide-img").onmouseenter = pararSlideAutomatico;
+    document.getElementById("slide-img").onmouseleave = iniciarSlideAutomatico;
+    
     montarPergunta();
 
     document.getElementById("form-contato").onsubmit = enviarForm;
