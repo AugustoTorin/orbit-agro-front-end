@@ -41,9 +41,9 @@ function validarEmail(email) {
 
 function enviarForm(e) {
     e.preventDefault();
-    var nome = document.getElementById("form-nome").value;
-    var email = document.getElementById("form-email").value;
-    var msg = document.getElementById("form-mensagem").value;
+    var nome = document.getElementById("form-nome").value.trim();
+    var email = document.getElementById("form-email").value.trim();
+    var msg = document.getElementById("form-mensagem").value.trim();
     var ret = document.getElementById("form-retorno");
 
     if (nome == "" || email == "" || msg == "") {
