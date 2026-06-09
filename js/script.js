@@ -94,6 +94,8 @@ var escolhida = -1;
 function montarPergunta() {
     escolhida = -1;
     document.getElementById("quiz-contador").innerText = "Pergunta " + (pergAtual+1) + " de " + perguntas.length;
+    document.getElementById("quiz-acertos").innerText =
+    "Acertos: " + acertos;
     document.getElementById("quiz-pergunta").innerText = perguntas[pergAtual][0];
 
     var opcoes = document.getElementById("quiz-opcoes");
@@ -151,6 +153,7 @@ function proximaPergunta() {
 function reiniciarQuiz() {
     pergAtual = 0;
     acertos = 0;
+    document.getElementById("quiz-acertos").innerText = "Acertos: 0";
     escolhida = -1;
     document.getElementById("quiz-area").style.display = "block";
     document.getElementById("quiz-resultado").style.display = "none";
