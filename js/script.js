@@ -26,6 +26,9 @@ function slideAnterior() { trocarSlide(-1); }
 
 setInterval(function(){ trocarSlide(1); }, 5000);
 
+function validarEmail(email) {
+    return email.includes("@") && email.includes(".");
+}
 
 function enviarForm(e) {
     e.preventDefault();
@@ -40,8 +43,8 @@ function enviarForm(e) {
         return false;
     }
 
-    if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
-        ret.innerText = "Informe um e-mail valido.";
+    if (!validarEmail(email)) {
+        ret.innerText = "Informe um e-mail válido.";
         ret.className = "form-retorno form-erro";
         return false;
     }
